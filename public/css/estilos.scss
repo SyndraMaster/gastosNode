@@ -1,0 +1,45 @@
+// Variables
+$color1: #EDE3DB;
+$color2: #F1DC2F;
+$color3: #DE4C51;
+$color4: #16D6D5;
+$color5: #312D39;
+
+// Generalidades
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background-color: $color1;
+}
+h1 {
+    color: $color1;
+}
+h3 {
+    margin-top: 29px;
+    font-size: 1.5rem;
+    color: #DE4C51;
+}
+h4 {
+    background-color: #DE4C51;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.5rem;
+    color: $color1;
+}
+.container {
+    width: 100%;
+    padding: 0 150px;
+}
+
+@import 'navbar';
+@import 'banner';
+@import 'dashboard';

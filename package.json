@@ -1,0 +1,26 @@
+{
+  "name": "gastosnode",
+  "version": "1.0.0",
+  "description": "Control de Gastos con Node y Mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyndraMaster/gastosNode.git"
+  },
+  "author": "Syndra Master",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SyndraMaster/gastosNode/issues"
+  },
+  "homepage": "https://github.com/SyndraMaster/gastosNode#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.4",
+    "node": "^19.4.0",
+    "nodemon": "^2.0.20"
+  }
+}

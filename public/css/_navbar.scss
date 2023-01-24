@@ -1,0 +1,20 @@
+header {
+    height: 60px;
+    width: 100%;
+    background-color: $color3;
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            margin-left: 20px;
+            font-size: 1.2rem;
+            color: $color1;
+            &:hover {
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+    }
+}
