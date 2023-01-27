@@ -10,6 +10,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   background-color: #EDE3DB;
 }
@@ -37,6 +41,34 @@ h4 {
 .container {
   width: 100%;
   padding: 0 150px;
+}
+
+.centrado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.centrado-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 header {
@@ -67,5 +99,60 @@ header .container a {
 header .container a:hover {
   color: #fff;
   font-weight: bold;
+}
+
+.banner {
+  height: calc(100vh - 60px);
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.banner .container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.banner .container .modulo {
+  width: 300px;
+  height: 350px;
+}
+
+.dash-saldo .saldo p {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.dash-saldo .botones button {
+  width: 80px;
+  height: 40px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.314);
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.314);
+}
+
+.dash-saldo .botones .agregar {
+  background-color: #16D6D5;
+}
+
+.dash-saldo .botones .disminuir {
+  background-color: #DE4C51;
 }
 /*# sourceMappingURL=estilos.css.map */
