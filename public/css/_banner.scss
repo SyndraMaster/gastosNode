@@ -14,6 +14,11 @@
         }
     }
 }
+.modulo {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.161);
+}
 .dash-saldo {
     .saldo {
         p {
@@ -41,6 +46,38 @@
         }
         .disminuir {
             background-color: $color3;
+        }
+    }
+}
+.dash-grafica {
+    border: 1px solid red;
+    .reportes {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .reporte-data {
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+    img {
+        width: 300px;
+    }
+}
+.dash-header {
+    height: 50px;
+    color: $color1;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.dash-transacciones {
+    ul {
+        li {
+            height: 50px;
+            background-color: #fff;
+            border-bottom: 2px solid $color1;
         }
     }
 }

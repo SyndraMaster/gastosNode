@@ -128,6 +128,13 @@ header .container a:hover {
   height: 350px;
 }
 
+.modulo {
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.161);
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.161);
+}
+
 .dash-saldo .saldo p {
   font-size: 2rem;
   text-align: center;
@@ -154,5 +161,45 @@ header .container a:hover {
 
 .dash-saldo .botones .disminuir {
   background-color: #DE4C51;
+}
+
+.dash-grafica {
+  border: 1px solid red;
+}
+
+.dash-grafica .reportes {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dash-grafica .reportes .reporte-data {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.dash-grafica img {
+  width: 300px;
+}
+
+.dash-header {
+  height: 50px;
+  color: #EDE3DB;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.dash-transacciones ul li {
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 2px solid #EDE3DB;
 }
 /*# sourceMappingURL=estilos.css.map */
