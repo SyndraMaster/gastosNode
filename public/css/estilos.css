@@ -214,10 +214,38 @@ header .container a:hover {
   position: absolute;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background-color: rgba(0, 255, 255, 0.213);
+  background-color: rgba(237, 227, 219, 0.4);
 }
 
 .formularioModal .modalContainer {
   background-color: aliceblue;
+}
+
+form {
+  width: 100%;
+  height: 300px;
+}
+
+form input {
+  width: 200px;
+  padding: 5px 20px;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #DE4C51;
+}
+
+form input::-webkit-inner-spin-button, form input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+form input[type=number] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 /*# sourceMappingURL=estilos.css.map */

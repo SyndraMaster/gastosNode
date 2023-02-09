@@ -28,9 +28,15 @@
         <section class="banner">
             <div class="container">
                 <div class="formularioModal centrado">
+                    
                     <div class="modalContainer modulo">
-                        <h5>Titulo</h5>
-
+                        <header class="dash-header centrado">
+                            <p class="titulo-modal">Titulo</p>
+                        </header>
+                        <form action="/" method="post" class="centrado">
+                            <input type="number" name="nuevoSaldo" id="cambio-saldo">
+                            <button type="submit"></button>
+                        </form>
                     </div>
                 </div>
                 <div class="dash-saldo modulo centrado-col">
@@ -39,7 +45,7 @@
                         <p name="saldoM">$ 0</p>
                     </div>
                     <div class="botones">
-                        <button class="agregar" type="submit" name="agregado">Agregar</button>
+                        <button class="agregar" type="button" name="agregado">Agregar</button>
                         <button class="disminuir">Disminuir</button>
                     </div>
                 </div>
