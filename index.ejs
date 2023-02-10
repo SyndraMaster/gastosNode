@@ -37,8 +37,9 @@
                         </header>
                         <form action="/" method="post" class="centrado-col">
                             <input type="text" name="descripcion" id="" placeholder="Descripción">
-                            <input type="number" name="nuevoSaldo" id="cambio-saldo">
-                            <select>
+                            <input type="number" name="valor" id="cambio-saldo">
+                            <input type="hidden" name="tipo" value="" class="tipo">
+                            <select name="categoria">
                                 <option value="Vivienda">Vivienda</option>
                                 <option value="Transporte">Transporte</option>
                             </select>
@@ -49,7 +50,7 @@
                 <div class="dash-saldo modulo centrado-col">
                     <div class="saldo">
                         <h3>Tu saldo actual</h3>
-                        <p name="saldoM">$ 0</p>
+                        <p name="saldoM">$ <%= valor %></p>
                     </div>
                     <div class="botones">
                         <button class="agregar" type="button" name="agregado">Agregar</button>
