@@ -2,124 +2,130 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilos.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gastos Node</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos Node</title>
 </head>
 
 <body>
-  <main>
-    <header>
-      <div class="container">
-        <div class="brand">
-          <h1>GastosNode</h1>
-        </div>
-        <nav>
-          <a href="#" class="enlace">Dashboard</a>
-          <a href="#" class="enlace">Consejos</a>
-          <a href="#" class="enlace">Calculadora</a>
-          <a href="#" class="enlace">Categoría</a>
-        </nav>
-      </div>
-    </header>
-    <section class="banner">
-      <div class="container">
-        <div class="formularioModal centrado">
-          <div class="modalContainer modulo">
-            <header class="dash-header centrado">
-              <p class="titulo-modal">Titulo</p>
-            </header>
-            <form action="/" method="post" class="centrado">
-              <input type="number" name="nuevoSaldo" id="cambio-saldo">
-              <button type="submit"></button>
-            </form>
-          </div>
-        </div>
-        <div class="dash-saldo modulo centrado-col">
-          <div class="saldo">
-            <h3>Tu saldo actual</h3>
-            <p name="saldoM">$ 0</p>
-          </div>
-          <div class="botones">
-            <button class="agregar" type="button" name="agregado">Agregar</button>
-            <button class="disminuir">Disminuir</button>
-          </div>
-        </div>
-        <div class="dash-grafica modulo">
-          <header class="dash-header centrado">
-            <p>Reporte</p>
-          </header>
-          <section class="reportes centrado">
-            <div class="reporte-data" id="ingresos">
-              <a href="">Ingresos</a>
-              <p class="reporte-value">$1000000</p>
+    <main>
+        <header>
+            <div class="container">
+                <div class="brand">
+                    <h1>GastosNode</h1>
+                </div>
+                <nav>
+                    <a href="#" class="enlace">Dashboard</a>
+                    <a href="#" class="enlace">Consejos</a>
+                    <a href="#" class="enlace">Calculadora</a>
+                    <a href="#" class="enlace">Categoría</a>
+                </nav>
             </div>
-            <div class="reporte-data" id="egresos">
-              <a href="">Egresos</a>
-              <p class="reporte-value">$750000</p>
+        </header>
+        <section class="banner">
+            <div class="container">
+                <div class="formulario-modal centrado">
+                    <div class="modalContainer modulo">
+                        <button class="cerrar">X</button>
+                        <header class="dash-header centrado">
+                            <p class="titulo-modal">Titulo</p>
+                        </header>
+                        <form action="/" method="post" class="centrado-col">
+                            <input type="text" name="descripcion" id="" placeholder="Descripción">
+                            <input type="number" name="nuevoSaldo" id="cambio-saldo">
+                            <select>
+                                <option value="Vivienda">Vivienda</option>
+                                <option value="Transporte">Transporte</option>
+                            </select>
+                            <button type="submit" class="submit-saldo">Aceptar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="dash-saldo modulo centrado-col">
+                    <div class="saldo">
+                        <h3>Tu saldo actual</h3>
+                        <p name="saldoM">$ 0</p>
+                    </div>
+                    <div class="botones">
+                        <button class="agregar" type="button" name="agregado">Agregar</button>
+                        <button class="disminuir">Disminuir</button>
+                    </div>
+                </div>
+                <div class="dash-grafica modulo">
+                    <header class="dash-header centrado">
+                        <p>Reporte</p>
+                    </header>
+                    <section class="reportes centrado">
+                        <div class="reporte-data" id="ingresos">
+                            <a href="">Ingresos</a>
+                            <p class="reporte-value">$1000000</p>
+                        </div>
+                        <div class="reporte-data" id="egresos">
+                            <a href="">Egresos</a>
+                            <p class="reporte-value">$750000</p>
+                        </div>
+                        <div class="reporte-data" id="resultado">
+                            <a href="">Resultado</a>
+                            <p class="reporte-value">$250000</p>
+                        </div>
+                    </section>
+                    <section class="reporte-graph">
+                        <div class="grafica">
+                            <img src="https://i.pinimg.com/564x/ed/e9/9c/ede99cfefa658d1d7c45b7e7e7bb9d8e.jpg" alt="">
+                        </div>
+                    </section>
+                </div>
+                <div class="dash-transacciones modulo">
+                    <header class="dash-header centrado">
+                        <p>Transacciones</p>
+                    </header>
+                    <section class="transacciones">
+                        <ul>
+                            <li class="centrado">
+                                <div class="categoria"></div>
+                                <div class="concepto">Arriendo</div>
+                                <div class="valor-concepto">420000</div>
+                            </li>
+                            <li class="centrado">
+                                <div class="categoria"></div>
+                                <div class="concepto">Arriendo</div>
+                                <div class="valor-concepto">420000</div>
+                            </li>
+                            <li class="centrado">
+                                <div class="categoria"></div>
+                                <div class="concepto">Arriendo</div>
+                                <div class="valor-concepto">420000</div>
+                            </li>
+                            <li class="centrado">
+                                <div class="categoria"></div>
+                                <div class="concepto">Arriendo</div>
+                                <div class="valor-concepto">420000</div>
+                            </li>
+                            <li class="centrado">
+                                <div class="categoria"></div>
+                                <div class="concepto">Arriendo</div>
+                                <div class="valor-concepto">420000</div>
+                            </li>
+                            <li class="centrado">
+                                <div class="categoria"></div>
+                                <div class="concepto">Arriendo</div>
+                                <div class="valor-concepto">420000</div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
             </div>
-            <div class="reporte-data" id="resultado">
-              <a href="">Resultado</a>
-              <p class="reporte-value">$250000</p>
-            </div>
-          </section>
-          <section class="reporte-graph">
-            <div class="grafica">
-              <img src="https://i.pinimg.com/564x/ed/e9/9c/ede99cfefa658d1d7c45b7e7e7bb9d8e.jpg" alt="">
-            </div>
-          </section>
-        </div>
-        <div class="dash-transacciones modulo">
-          <header class="dash-header centrado">
-            <p>Transacciones</p>
-          </header>
-          <section class="transacciones">
-            <ul>
-              <li class="centrado">
-                <div class="categoria"></div>
-                <div class="concepto">Arriendo</div>
-                <div class="valor-concepto">420000</div>
-              </li>
-              <li class="centrado">
-                <div class="categoria"></div>
-                <div class="concepto">Arriendo</div>
-                <div class="valor-concepto">420000</div>
-              </li>
-              <li class="centrado">
-                <div class="categoria"></div>
-                <div class="concepto">Arriendo</div>
-                <div class="valor-concepto">420000</div>
-              </li>
-              <li class="centrado">
-                <div class="categoria"></div>
-                <div class="concepto">Arriendo</div>
-                <div class="valor-concepto">420000</div>
-              </li>
-              <li class="centrado">
-                <div class="categoria"></div>
-                <div class="concepto">Arriendo</div>
-                <div class="valor-concepto">420000</div>
-              </li>
-              <li class="centrado">
-                <div class="categoria"></div>
-                <div class="concepto">Arriendo</div>
-                <div class="valor-concepto">420000</div>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </div>
-    </section>
-    <section class="dashboard">
+        </section>
+        <section class="dashboard">
 
-    </section>
-  </main>
-  <script src='js/main.js'></script>
+        </section>
+    </main>
+    <script src='./js/main.js'></script>
 </body>
 
 </html>

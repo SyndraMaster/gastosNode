@@ -203,21 +203,19 @@ header .container a:hover {
   border-bottom: 2px solid #EDE3DB;
 }
 
-.formularioModal {
+.formulario-modal {
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background-color: rgba(237, 227, 219, 0.4);
 }
 
-.formularioModal .modalContainer {
+.formulario-modal .modalContainer {
   background-color: aliceblue;
 }
 
@@ -234,6 +232,7 @@ form input {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 10px;
   border: 2px solid #DE4C51;
 }
 
@@ -247,5 +246,46 @@ form input[type=number] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #DE4C51;
+  border: none;
+  color: #fff;
+  -webkit-box-shadow: 0 0 5px 5px #00000029;
+          box-shadow: 0 0 5px 5px #00000029;
+}
+
+.submit-saldo {
+  margin-top: 20px;
+  border: none;
+  font-size: 1.2rem;
+  width: 200px;
+  background-color: #16D6D5;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: #fff;
+}
+
+select {
+  background-color: #DE4C51;
+  width: 200px;
+  padding: 5px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #EDE3DB;
 }
 /*# sourceMappingURL=estilos.css.map */
