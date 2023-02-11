@@ -23,7 +23,6 @@ async function main() {
     }
   });
   const Transacciones = mongoose.model('transaccion', transaccionesSchema);
-  // let Total = mongoose.model('Transacciones')
   async function sumaValores () {
     const resultado = await Transacciones.aggregate([
     {
@@ -40,8 +39,6 @@ async function main() {
   console.log(resultado[0].total)
   return resultado[0].total;
 } 
-const resultadoSuma = await sumaValores();
-console.log(resultadoSuma);
 app.post('/', (req,res) => {
   let descripcion = req.body.descripcion;
     let valorFormulario = req.body.valor;
@@ -54,11 +51,11 @@ app.post('/', (req,res) => {
       tipo: tipoFormulario
     })
     nuevaEntrada.save();
-    
     res.redirect('/');
   });
-  app.get('/', (req,res) => {
-      res.render(__dirname + '/index', {valor: resultadoSuma});
+  app.get('/', async (req,res) => {
+    let resultadoSuma =  await sumaValores();
+    res.render(__dirname + '/index', {valor: resultadoSuma});
   })
 }
 
