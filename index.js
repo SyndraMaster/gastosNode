@@ -17,24 +17,33 @@ async function main() {
     valor: Number,
     categoria: String,
     tipo: String,
-    fecha: Date
-  });
-  const Transacciones = mongoose.model('transaccion', transaccionesSchema);
-  const transaccion = new Transacciones ({
-    nombre: 'Arriendo',
-    valor: 420000,
-    categoria: 'Vivienda',
-    tipo: 'gasto',
     fecha: {
       type: Date,
       default: Date.now
     }
   });
-  // transaccion.save();
-  const consulta = await Transacciones.find({nombre: 'Arriendo'});
-  console.log(consulta);
-  app.post('/', (req,res) => {
-    let descripcion = req.body.descripcion;
+  const Transacciones = mongoose.model('transaccion', transaccionesSchema);
+  // let Total = mongoose.model('Transacciones')
+  async function sumaValores () {
+    const resultado = await Transacciones.aggregate([
+    {
+      $group: {
+        _id: null,
+        total: {$sum: "$valor"}
+      }
+    }
+  ]).exec();
+  if (resultado.length === 0) {
+    return 0;
+  }
+  
+  console.log(resultado[0].total)
+  return resultado[0].total;
+} 
+const resultadoSuma = await sumaValores();
+console.log(resultadoSuma);
+app.post('/', (req,res) => {
+  let descripcion = req.body.descripcion;
     let valorFormulario = req.body.valor;
     let categoriaFormulario = req.body.categoria;
     let tipoFormulario = req.body.tipo;
@@ -48,10 +57,10 @@ async function main() {
     
     res.redirect('/');
   });
+  app.get('/', (req,res) => {
+      res.render(__dirname + '/index', {valor: resultadoSuma});
+  })
 }
-app.get('/', (req,res) => {
-    res.render(__dirname + '/index', {valor: 20});
-})
 
 app.listen(3000, () => {
     console.log('Tu server está listo para usarse en el puerto 3000');
