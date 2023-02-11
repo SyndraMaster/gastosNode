@@ -11,7 +11,9 @@ app.use(express.static('public'));
 main().catch(err => console.log(err));
 
 async function main() {
+  // Nos conectamos a la base de datos, en este caso un host local
   await mongoose.connect('mongodb://127.0.0.1:27017/transaccionesDB');
+  // Establecemos el esquema que usaremos
   const transaccionesSchema = new mongoose.Schema({
     nombre: String,
     valor: Number,
@@ -22,8 +24,13 @@ async function main() {
       default: Date.now
     }
   });
+  // Establecemos la colleción y el esquema que usaremos
+  // La colleción se creará si ya no existe además de agregar una S al final
   const Transacciones = mongoose.model('transaccion', transaccionesSchema);
+
   async function sumaValores () {
+    // Ejecuta una agregación en la base de datos
+    // Para sumar el total de valores
     const resultado = await Transacciones.aggregate([
     {
       $group: {
@@ -32,6 +39,8 @@ async function main() {
       }
     }
   ]).exec();
+  // Si no hay documentos ni valores
+  // devuelve el resultado como 0
   if (resultado.length === 0) {
     return 0;
   }
@@ -40,6 +49,8 @@ async function main() {
   return resultado[0].total;
 } 
 app.post('/', (req,res) => {
+  // Totamos los datos del formulario para agregarlos
+  // en un documento
   let descripcion = req.body.descripcion;
     let valorFormulario = req.body.valor;
     let categoriaFormulario = req.body.categoria;
@@ -51,9 +62,11 @@ app.post('/', (req,res) => {
       tipo: tipoFormulario
     })
     nuevaEntrada.save();
+    // Recargamos la página con los datos actualizados
     res.redirect('/');
   });
   app.get('/', async (req,res) => {
+    // Ejecutamos la actualización de la suma en la base de datos
     let resultadoSuma =  await sumaValores();
     res.render(__dirname + '/index', {valor: resultadoSuma});
   })
