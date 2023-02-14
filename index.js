@@ -44,13 +44,11 @@ async function main() {
     if (resultado.length === 0) {
       return 0;
     }
-
-    console.log(resultado[0].total)
     return resultado[0].total;
   }
 
   app.post('/', (req, res) => {
-    // Totamos los datos del formulario para agregarlos
+    // Tomamos los datos del formulario para agregarlos
     // en un documento
     let descripcion = req.body.descripcion;
     let valorFormulario = req.body.valor;

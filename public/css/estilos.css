@@ -200,19 +200,17 @@ header .container a:hover {
 .dash-transacciones .lista-transacciones {
   height: 250px;
   scroll-behavior: smooth;
-  overflow-y: scroll;
 }
 
 .dash-transacciones .lista-transacciones::-webkit-scrollbar {
   background-color: #EDE3DB;
-  width: 10px;
+  width: 8px;
 }
 
 .dash-transacciones .lista-transacciones::-webkit-scrollbar-thumb {
   overflow: hidden;
   background-color: #DE4C51;
-  border: 1px solid #fff;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .dash-transacciones .lista-transacciones::-webkit-scrollbar-thumb:hover {
