@@ -74,20 +74,22 @@
 }
 .dash-transacciones {
     .lista-transacciones {
-        height: 300px;
+        height: 250px;
         scroll-behavior: smooth;
         overflow-y: scroll;
         &::-webkit-scrollbar {
-            background-color: aqua;
-            width: 5px;
-            
-            &:horizontal {
-                width: 2px;
-            }
-            // display: none;
+            background-color: $color1;
+            width: 10px;
+            // display: none;     
         }
         &::-webkit-scrollbar-thumb {
-            background-color: red;
+            overflow: hidden;
+            background-color: $color3;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            &:hover {
+                box-shadow: 0 0 5px 4px #00000043;
+            }
         }
         li {
             height: 50px;

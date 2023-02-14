@@ -198,22 +198,26 @@ header .container a:hover {
 }
 
 .dash-transacciones .lista-transacciones {
-  height: 300px;
+  height: 250px;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
 
 .dash-transacciones .lista-transacciones::-webkit-scrollbar {
-  background-color: aqua;
-  width: 5px;
-}
-
-.dash-transacciones .lista-transacciones::-webkit-scrollbar:horizontal {
-  width: 2px;
+  background-color: #EDE3DB;
+  width: 10px;
 }
 
 .dash-transacciones .lista-transacciones::-webkit-scrollbar-thumb {
-  background-color: red;
+  overflow: hidden;
+  background-color: #DE4C51;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.dash-transacciones .lista-transacciones::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: 0 0 5px 4px #00000043;
+          box-shadow: 0 0 5px 4px #00000043;
 }
 
 .dash-transacciones .lista-transacciones li {

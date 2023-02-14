@@ -67,9 +67,9 @@ async function main() {
     res.redirect('/');
   });
   app.get('/', async (req, res) => {
-    // Ejecutamos la actualización de la suma en la base de datos
-    
+    // Recorremos todas las transacciones para enviarlas al modulo de Transacciones en el documento
     let todasTransacciones = await Transacciones.find({})
+    // Ejecutamos la actualización de la suma en la base de datos
     let resultadoSuma = await sumaValores();
     res.render(__dirname + '/index', { valor: resultadoSuma, lista: todasTransacciones});
   })
