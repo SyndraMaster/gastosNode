@@ -197,7 +197,26 @@ header .container a:hover {
   font-size: 1.2rem;
 }
 
-.dash-transacciones ul li {
+.dash-transacciones .lista-transacciones {
+  height: 300px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.dash-transacciones .lista-transacciones::-webkit-scrollbar {
+  background-color: aqua;
+  width: 5px;
+}
+
+.dash-transacciones .lista-transacciones::-webkit-scrollbar:horizontal {
+  width: 2px;
+}
+
+.dash-transacciones .lista-transacciones::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+
+.dash-transacciones .lista-transacciones li {
   height: 50px;
   background-color: #fff;
   border-bottom: 2px solid #EDE3DB;

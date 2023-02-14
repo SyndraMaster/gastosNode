@@ -86,37 +86,14 @@
                         <p>Transacciones</p>
                     </header>
                     <section class="transacciones">
-                        <ul>
-                            <li class="centrado">
-                                <div class="categoria"></div>
-                                <div class="concepto">Arriendo</div>
-                                <div class="valor-concepto">420000</div>
-                            </li>
-                            <li class="centrado">
-                                <div class="categoria"></div>
-                                <div class="concepto">Arriendo</div>
-                                <div class="valor-concepto">420000</div>
-                            </li>
-                            <li class="centrado">
-                                <div class="categoria"></div>
-                                <div class="concepto">Arriendo</div>
-                                <div class="valor-concepto">420000</div>
-                            </li>
-                            <li class="centrado">
-                                <div class="categoria"></div>
-                                <div class="concepto">Arriendo</div>
-                                <div class="valor-concepto">420000</div>
-                            </li>
-                            <li class="centrado">
-                                <div class="categoria"></div>
-                                <div class="concepto">Arriendo</div>
-                                <div class="valor-concepto">420000</div>
-                            </li>
-                            <li class="centrado">
-                                <div class="categoria"></div>
-                                <div class="concepto">Arriendo</div>
-                                <div class="valor-concepto">420000</div>
-                            </li>
+                        <ul class="lista-transacciones">
+                            <% lista.forEach(elemento => { %>
+                                <li class="centrado">
+                                    <div class="categoria"><%= elemento.categoria %></div>
+                                    <div class="concepto"><%= elemento.nombre %></div>
+                                    <div class="valor-concepto"><%= elemento.valor %></div>
+                                </li>
+                            <% }); %>
                         </ul>
                     </section>
                 </div>

@@ -18,3 +18,5 @@ quitar.addEventListener('click', () => {
     tipo.setAttribute('value', 'gasto');
 })
 console.log(titulo)
+
+// document.querySelector('.lista-transacciones').style.overglowY = 'scroll';

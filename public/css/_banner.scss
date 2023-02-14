@@ -73,11 +73,27 @@
     font-size: 1.2rem;
 }
 .dash-transacciones {
-    ul {
+    .lista-transacciones {
+        height: 300px;
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            background-color: aqua;
+            width: 5px;
+            
+            &:horizontal {
+                width: 2px;
+            }
+            // display: none;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: red;
+        }
         li {
             height: 50px;
             background-color: #fff;
             border-bottom: 2px solid $color1;
         }
+
     }
 }
