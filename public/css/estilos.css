@@ -195,6 +195,10 @@ header .container a:hover {
   color: #EDE3DB;
   font-weight: bold;
   font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 100;
 }
 
 .dash-transacciones .lista-transacciones {
@@ -222,6 +226,14 @@ header .container a:hover {
   height: 50px;
   background-color: #fff;
   border-bottom: 2px solid #EDE3DB;
+}
+
+.dash-transacciones .ver-mas {
+  background-color: #DE4C51;
+}
+
+.dash-transacciones .ver-mas a {
+  color: #fff;
 }
 
 .formulario-modal {

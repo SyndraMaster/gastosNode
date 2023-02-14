@@ -1,15 +1,18 @@
+
 const express = require('express');
 const app = express();
 const ejs = require('ejs')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+// const chart  = require ('chart.js');
+const { json } = require('stream/consumers');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
 main().catch(err => console.log(err));
-
+// const grafica = new Chart
 async function main() {
   // Nos conectamos a la base de datos, en este caso un host local
   await mongoose.connect('mongodb://127.0.0.1:27017/transaccionesDB');
@@ -67,12 +70,21 @@ async function main() {
   app.get('/', async (req, res) => {
     // Recorremos todas las transacciones para enviarlas al modulo de Transacciones en el documento
     let todasTransacciones = await Transacciones.find({})
+    // Mandamos al ejs un array con las transacciones y la fecha.
+    let dataChart = todasTransacciones.map(gasto => {
+      return {
+        fecha: gasto.fecha.getFullYear() + '-' + gasto.fecha.getMonth(),
+        valor: gasto.valor
+      }
+    });
+    
     // Ejecutamos la actualización de la suma en la base de datos
     let resultadoSuma = await sumaValores();
-    res.render(__dirname + '/index', { valor: resultadoSuma, lista: todasTransacciones});
+    res.render(__dirname + '/index', { valor: resultadoSuma, lista: todasTransacciones, dataChart: JSON.stringify(dataChart)});
   })
 }
 
-app.listen(3000, () => {
+
+app.listen(3000, () => { 
   console.log('Tu server está listo para usarse en el puerto 3000');
 })

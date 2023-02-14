@@ -71,6 +71,9 @@
     color: $color1;
     font-weight: bold;
     font-size: 1.2rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 100;
 }
 .dash-transacciones {
     .lista-transacciones {
@@ -97,5 +100,11 @@
             border-bottom: 2px solid $color1;
         }
 
+    }
+    .ver-mas {
+        background-color: $color3;
+        a {
+            color: #fff;
+        }
     }
 }

@@ -77,7 +77,8 @@
                     </section>
                     <section class="reporte-graph">
                         <div class="grafica">
-                            <img src="https://i.pinimg.com/564x/ed/e9/9c/ede99cfefa658d1d7c45b7e7e7bb9d8e.jpg" alt="">
+                            <!-- <img src="https://i.pinimg.com/564x/ed/e9/9c/ede99cfefa658d1d7c45b7e7e7bb9d8e.jpg" alt=""> -->
+                            <canvas id="lineChart" width="300" height="250"></canvas>
                         </div>
                     </section>
                 </div>
@@ -87,6 +88,7 @@
                     </header>
                     <section class="transacciones">
                         <ul class="lista-transacciones">
+                            
                             <% lista.forEach(elemento => { %>
                                 <li class="centrado">
                                     <div class="categoria"><%= elemento.categoria %></div>
@@ -96,14 +98,23 @@
                             <% }); %>
                         </ul>
                     </section>
+                    <div class="ver-mas dash-header centrado">
+                        <a href="#">Ver más</a>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="dashboard">
-
+            
         </section>
     </main>
+    <script>
+        let informacion = '<%- dataChart %>';
+        console.log(informacion);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src='./js/main.js'></script>
+    <!-- <script src='./js/chart.js'></script> -->
 </body>
 
 </html>
