@@ -91,9 +91,10 @@
                             
                             <% lista.forEach(elemento => { %>
                                 <li class="centrado">
-                                    <div class="categoria"><%= elemento.categoria %></div>
+                                    <!-- <div class="categoria"><%= elemento.categoria %></div> -->
+                                    <img src="./img/<%= elemento.categoria.toLowerCase() %>.png" alt="<%= elemento.categoria %>" class="categoria-icono">
                                     <div class="concepto"><%= elemento.nombre %></div>
-                                    <div class="valor-concepto"><%= elemento.valor %></div>
+                                    <div class="valor-concepto">$ <%= elemento.valor.toLocaleString('es') %></div>
                                 </li>
                             <% }); %>
                         </ul>

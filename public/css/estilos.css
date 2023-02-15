@@ -226,6 +226,15 @@ header .container a:hover {
   height: 50px;
   background-color: #fff;
   border-bottom: 2px solid #EDE3DB;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
+}
+
+.dash-transacciones .lista-transacciones .categoria-icono {
+  width: 30px;
+  margin-right: 10px;
 }
 
 .dash-transacciones .ver-mas {

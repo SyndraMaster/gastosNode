@@ -98,8 +98,13 @@
             height: 50px;
             background-color: #fff;
             border-bottom: 2px solid $color1;
+            justify-content: space-between;
+            padding: 0 20px;
         }
-
+        .categoria-icono {
+            width: 30px;
+            margin-right: 10px;
+        }
     }
     .ver-mas {
         background-color: $color3;
