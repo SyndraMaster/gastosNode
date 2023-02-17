@@ -63,7 +63,9 @@ async function main() {
       categoria: categoriaFormulario,
       tipo: tipoFormulario
     })
-    nuevaEntrada.save();
+    if (valorFormulario != null) {
+      nuevaEntrada.save();
+    }
     // Recargamos la página con los datos actualizados
     res.redirect('/');
   });

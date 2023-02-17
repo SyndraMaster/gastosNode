@@ -198,7 +198,7 @@ header .container a:hover {
   -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
   position: relative;
-  z-index: 100;
+  z-index: 2;
 }
 
 .dash-transacciones .lista-transacciones {
@@ -251,6 +251,7 @@ header .container a:hover {
   top: 0;
   left: 0;
   display: none;
+  z-index: 100;
   position: absolute;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -268,7 +269,7 @@ form {
 
 form input {
   width: 200px;
-  padding: 5px 20px;
+  padding: 5px 10px;
   outline: none;
   border-radius: 5px;
   text-align: center;
@@ -322,7 +323,7 @@ form input[type=number] {
 select {
   background-color: #DE4C51;
   width: 200px;
-  padding: 5px 20px;
+  padding: 5px 10px;
   font-size: 1.2rem;
   border-radius: 5px;
   outline: none;
