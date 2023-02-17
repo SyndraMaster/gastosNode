@@ -76,6 +76,37 @@ async function main() {
     // Recorremos todas las transacciones para enviarlas al modulo de Transacciones en el documento
     let todasTransacciones = await Transacciones.find({})
     // Mandamos al ejs un array con las transacciones y la fecha.
+    function suma (arreglo)  {
+      let sum = 0;
+      console.log(arreglo);
+      for (let i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] != undefined) {
+          const element = arreglo[i].valor;
+          sum += element;
+        }
+      }
+      return sum
+    }
+    let ingresos = todasTransacciones.map(ingreso => {
+      if (ingreso.valor > 0) {
+        return {
+          fecha: ingreso.fecha.getFullYear() + '-' + ingreso.fecha.getMonth(),
+          valor: ingreso.valor
+        }
+      }
+    });
+    let egresos = todasTransacciones.map(egreso => {
+      if (egreso.valor < 0) {
+        return {
+          fecha: egreso.fecha.getFullYear() + '-' + egreso.fecha.getMonth(),
+          valor: egreso.valor
+        }
+      }
+    });
+    let sumaIngresos = suma(ingresos);
+    let sumaEgresos = suma(egresos);
+    console.log(sumaIngresos);
+    console.log(sumaEgresos);
     let dataChart = todasTransacciones.map(gasto => {
       return {
         fecha: gasto.fecha.getFullYear() + '-' + gasto.fecha.getMonth(),
