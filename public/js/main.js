@@ -65,6 +65,7 @@ function abrirModal (texto) {
         modal.style.display = 'flex';
         tipo.setAttribute('value', 'ingreso');
         agregarOpciones(categoriasEntrada);
+
     } else {
         titulo.textContent = 'Agregar Gasto';
         modal.style.display = 'flex';

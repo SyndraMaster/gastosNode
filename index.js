@@ -57,6 +57,9 @@ async function main() {
     let valorFormulario = req.body.valor;
     let categoriaFormulario = req.body.categoria;
     let tipoFormulario = req.body.tipo;
+    if (tipoFormulario == 'gasto') {
+      valorFormulario *= -1;
+    }
     const nuevaEntrada = new Transacciones({
       nombre: descripcion,
       valor: valorFormulario,

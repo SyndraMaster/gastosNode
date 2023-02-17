@@ -94,7 +94,7 @@
                                     <!-- <div class="categoria"><%= elemento.categoria %></div> -->
                                     <img src="./img/<%= elemento.categoria.toLowerCase() %>.png" alt="<%= elemento.categoria %>" class="categoria-icono">
                                     <div class="concepto"><%= elemento.nombre %></div>
-                                    <div class="valor-concepto">$ <%= elemento.valor.toLocaleString('es') %></div>
+                                    <div class="valor-concepto">$ <%= elemento.valor.toLocaleString('es-US') %></div>
                                 </li>
                             <% }); %>
                         </ul>
