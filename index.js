@@ -75,45 +75,58 @@ async function main() {
   app.get('/', async (req, res) => {
     // Recorremos todas las transacciones para enviarlas al modulo de Transacciones en el documento
     let todasTransacciones = await Transacciones.find({})
-    // Mandamos al ejs un array con las transacciones y la fecha.
+    // Hacemos la suma de el arreglo dependiendo de si es gasto o esgreso
     function suma (arreglo)  {
       let sum = 0;
-      console.log(arreglo);
+      // console.log(arreglo);
       for (let i = 0; i < arreglo.length; i++) {
         if (arreglo[i] != undefined) {
           const element = arreglo[i].valor;
           sum += element;
         }
       }
-      return sum
+      return sum;
     }
-    let ingresos = todasTransacciones.map(ingreso => {
-      if (ingreso.valor > 0) {
-        return {
-          fecha: ingreso.fecha.getFullYear() + '-' + ingreso.fecha.getMonth(),
-          valor: ingreso.valor
-        }
+    // Obtenemos el arreglo con todos los ingresos
+    let ingresos = todasTransacciones.filter(ingreso => ingreso.valor > 0);
+    let chartIngresos = ingresos.map(ingreso => {
+      return {
+        fecha: ingreso.fecha.getFullYear() + '-' + ingreso.fecha.getMonth(),
+        valor: ingreso.valor
       }
     });
-    let egresos = todasTransacciones.map(egreso => {
-      if (egreso.valor < 0) {
-        return {
-          fecha: egreso.fecha.getFullYear() + '-' + egreso.fecha.getMonth(),
-          valor: egreso.valor
-        }
+    // Obtenemos el arreglo con todos los egresos
+    let egresos = todasTransacciones.filter(egreso => egreso.valor < 0);
+    let chartEgresos = egresos.map(egreso => {
+      return {
+        fecha: egreso.fecha.getFullYear() + '-' + egreso.fecha.getMonth(),
+        valor: egreso.valor
       }
     });
-    let sumaIngresos = suma(ingresos);
-    let sumaEgresos = suma(egresos);
+    let sumaIngresos = suma(chartIngresos);
+    let sumaEgresos = suma(chartEgresos);
     console.log(sumaIngresos);
     console.log(sumaEgresos);
+    // Mandamos al ejs un array con las transacciones y la fecha.
     let dataChart = todasTransacciones.map(gasto => {
       return {
-        fecha: gasto.fecha.getFullYear() + '-' + gasto.fecha.getMonth(),
+        fecha: gasto.fecha.getFullYear() + '-' + gasto.fecha.getMonth() + '-' + gasto.fecha.getDate(),
         valor: gasto.valor
       }
     });
-    
+    async function clasificar () {
+      let clasificacion = await Transacciones.aggregate([
+       {
+         $group: {
+           _id: { $dateToString: { format: "%Y-%m-%d", date: "$fecha" } },
+           registros: { $push: "$valor" }
+         }
+       }
+     ])
+     return clasificacion;
+    }
+    let clasificados = await clasificar();
+    console.log( clasificados);
     // Ejecutamos la actualización de la suma en la base de datos
     let resultadoSuma = await sumaValores();
     res.render(__dirname + '/index', { valor: resultadoSuma, lista: todasTransacciones, dataChart: JSON.stringify(dataChart)});
