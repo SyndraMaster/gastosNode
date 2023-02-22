@@ -37,11 +37,19 @@ var chartConfig = {
     data: {
         labels: informacionParse.map(element => element.fecha),
         datasets: [{
-            label: 'Ventas',
-            data: informacionParse.map(element => element.valor),
-            borderColor: 'rgb(222, 76, 81)',
-            borderWidth: 1,
+            label: 'Ingresos',
+            data: informacionParse.map(element => element.ingresos),
+            borderColor: 'rgb(22,214,213)',
+            borderWidth: 4,
             fill: false
+        },
+        {
+            label: 'Egresos',
+            data: informacionParse.map(element => element.egresos),
+            borderColor: 'rgb(222, 76, 81)',
+            borderWidth: 4,
+            fill: false
+            
         }]
     },
     options: {

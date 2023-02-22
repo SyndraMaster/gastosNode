@@ -126,10 +126,30 @@ async function main() {
      return clasificacion;
     }
     let clasificados = await clasificar();
-    console.log( clasificados);
+    let dataGrafica = []
+    clasificados.forEach(registro => {
+      let ingresos = registro.registros.filter(cifra => cifra >= 0);
+      let egresos = registro.registros.filter(cifra => cifra < 0);
+      let totalDiarioIngresos = 0;
+      let totalDiarioEgresos = 0;
+      for (let i = 0; i < ingresos.length; i++) {
+        totalDiarioIngresos += ingresos[i];
+      }
+      for (let i = 0; i < egresos.length; i++) {
+        totalDiarioEgresos += egresos[i];
+      }
+      // console.log(sumaTotal);
+      let registrodia = {
+        fecha: registro._id,
+        ingresos: totalDiarioIngresos,
+        egresos: totalDiarioEgresos
+      }
+      dataGrafica.push(registrodia)
+    })
+    console.log(dataGrafica);
     // Ejecutamos la actualización de la suma en la base de datos
     let resultadoSuma = await sumaValores();
-    res.render(__dirname + '/index', { valor: resultadoSuma, lista: todasTransacciones, dataChart: JSON.stringify(dataChart)});
+    res.render(__dirname + '/index', { valor: resultadoSuma, lista: todasTransacciones, dataChart: JSON.stringify(dataGrafica)});
   })
 }
 
